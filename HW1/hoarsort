@@ -1,0 +1,25 @@
+import random
+
+
+def hoar(a):
+    if len(a)<=1:
+        return a
+    else:
+        el=random.choice(a)
+        m=[]
+        r=[]
+        b=[]
+        for i in a:
+            if i<el:
+                m.append(i)
+            elif i==el:
+                r.append(i)
+            elif i>el:
+                b.append(i)
+        return hoar(m)+r+hoar(b)
+n=int(input())
+a=[]
+for i in range (n):
+    ai=int(input())
+    a.append(ai)
+print(hoar(a))
