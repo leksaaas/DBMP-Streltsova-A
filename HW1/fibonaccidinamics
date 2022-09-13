@@ -1,0 +1,12 @@
+def fibonacci(n):
+    if n<=1:
+        return n
+    prev=0
+    cur=1
+    for i in range (n-1):
+        next=prev+cur
+        prev=cur
+        cur=next
+    return cur
+n=int(input())
+print(fibonacci(n))
