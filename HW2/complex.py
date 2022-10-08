@@ -12,6 +12,7 @@ class CNumbers:
         return self.xpart, self.ypart
 
 
+
     def printing(self):
         return print(self.xpart, '+' if self.ypart >= 0 else '-', abs(self.ypart), 'i')
     def printing2(self):
@@ -43,7 +44,7 @@ def vichitator(self, other):
 
 def umnozhator(self, other):
     return CNumbers(self.xpart * other.xpart - self.ypart * other.ypart,
-                    self.ypart * other.xpart - other.ypart * self.xpart)
+                    self.ypart * other.xpart + other.ypart * self.xpart)
 
 
 def delitor(self, other):
@@ -74,3 +75,5 @@ a.perevodchikvexp()
 a.printing2()
 a.perevodcnikvalg()
 a.printing()
+p=umnozhator(a,b)
+p.printing()
