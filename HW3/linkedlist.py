@@ -91,6 +91,9 @@ class List:
         self = l
         return result
 
+
+
+
 A = List()
 for i in range(5):
     A.append(i)
