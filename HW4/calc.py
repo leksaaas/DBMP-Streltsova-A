@@ -120,3 +120,44 @@ class CNumbers:
             self.b = value
         else:
             raise ValueError
+print('Введите ваши числа: 1-ое число - действительная часть 1-го, 2-ое - его мнимая часть, 3-е - действительная часть 2-го, 4-е - его мнимая часть')
+try:
+    a=[float(k) for k in input().split()]
+except ValueError:
+    print('Вы ввели что-то не то')
+else:
+    try:
+        A=CNumbers(a[0],a[1])
+        B=CNumbers(a[2],a[3])
+    except IndexError:
+        print('Введите 4 числа')
+print('Выберите действие: +,-,/,*,perevodvexp,abs')
+d=input()
+try:
+    if d not in ('+','-','/','*','perevosvexp','abs'):
+        raise TypeError
+except TypeError:
+    print('Я такое не умею')
+if d=='+':
+    print(A+B)
+elif d=='-':
+    print(A-B)
+elif d=='/':
+    try:
+      print(A/B)
+    except ZeroDivisionError:
+        print('Нельзя делить на 0')
+elif d=='*':
+    print(A*B)
+elif d=='perevodvexp':
+    try:
+        print('A=',A.perevodchikvexp())
+    except Exception:
+        print('Перевод первого числа невозможен')
+    try:
+        print('B=',B.perevodchikvexp())
+    except Exception:
+        print('Перевод второго числа невозможен')
+elif d=='abs':
+    print('abs(A)=',abs(A))
+    print('abs(B)=', abs(B))
