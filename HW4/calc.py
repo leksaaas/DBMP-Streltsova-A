@@ -22,6 +22,7 @@ class CNumbers:
 
 
 
+
     def perevodchikvexp(self):
         if self.a==0:
             raise Exception("Перевод невозможен")
